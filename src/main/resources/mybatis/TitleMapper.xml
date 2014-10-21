@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="com.tidecc.mybatis.cloud.titleDic.TitleDao">
+
+	<!--
+		获取用户: 输出直接映射到对象, login_name列要"as loginName"以方便映射 ,team_id as "team.id"创建team对象并赋值
+	-->
+	<select id="get" parameterType="String" resultType="TitleEntity">
+		SELECT oid,
+				titleName,
+				titleCode,
+				decimalPlace,
+				offsetPlace,
+				currencyID
+		FROM cld_title
+		WHERE OID=#{oid}
+	</select>
+
+
+	<!-- 插入用户： 1.由数据库生成id并赋值到user对象 2.输入用对象, 嵌套属性表达式#{team.id} -->
+	<insert id="save" parameterType="TitleEntity" useGeneratedKeys="true" keyProperty="oid">
+		insert into cld_title (
+				titleName, 
+				titleCode, 
+				decimalPlace, 
+				offsetPlace, 
+				currencyID
+				)
+		values (
+				#{titleName}, 
+				#{titleCode}, 
+				#{decimalPlace}, 
+				#{offsetPlace},
+				#{currencyID})
+	</insert>
+
+
+</mapper>
