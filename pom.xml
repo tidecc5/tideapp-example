@@ -18,7 +18,7 @@
     <spring-data-jpa.version>1.4.4.RELEASE</spring-data-jpa.version>
     <tomcat-jdbc.version>7.0.52</tomcat-jdbc.version>
     <sitemesh.version>2.4.2</sitemesh.version>
-    <shiro.version>1.2.2</shiro.version>
+    <shiro.version>1.2.3</shiro.version>
     <cxf.version>2.7.10</cxf.version>
     <activemq.version>5.7.0</activemq.version>
     <quartz.version>2.2.1</quartz.version>
@@ -66,6 +66,12 @@
     <scope>test</scope>
   </dependency>
   <!-- Junit end -->
+  
+    <dependency>  
+        <groupId>org.apache.shiro</groupId>  
+        <artifactId>shiro-core</artifactId>  
+        <version>1.2.3</version>  
+    </dependency>
     
     <!-- SpringFramework begin -->
     <dependency>
@@ -247,6 +253,16 @@
     </dependency>
     <!-- Redis end -->
 
+    <dependency>
+    	<groupId>com.google.protobuf</groupId>
+    	<artifactId>protobuf-java</artifactId>
+    	<version>2.4.1</version>
+    </dependency>
+    <dependency>
+    	<groupId>com.alibaba</groupId>
+    	<artifactId>druid</artifactId>
+    	<version>0.2.26</version>
+    </dependency>
   </dependencies>
 
 
