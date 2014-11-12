@@ -68,12 +68,12 @@ public class RedisClient {
     } 
 
     public void show() {     
-        //KeyOperate(); 
+        KeyOperate(); 
         //StringOperate(); 
         //ListOperate(); 
         //SetOperate();
         //SortedSetOperate();
-        HashOperate(); 
+        //HashOperate(); 
         
         jedisPool.returnResource(jedis);
         shardedJedisPool.returnResource(shardedJedis);
