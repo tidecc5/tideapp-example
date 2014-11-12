@@ -20,12 +20,12 @@ public class PasswordTest extends BaseTest {
 
     @Test
     public void testPasswordServiceWithMyRealm() {
-        login("classpath:shiro-passwordservice.ini", "wu", "123");
+        login("classpath:com/tidecc/shiro/chapter05/shiro-passwordservice.ini", "wu", "123");
     }
 
     @Test
     public void testPasswordServiceWithJdbcRealm() {
-        login("classpath:shiro-jdbc-passwordservice.ini", "wu", "123");
+        login("classpath:com/tidecc/shiro/chapter05/shiro-jdbc-passwordservice.ini", "wu", "123");
     }
 
     @Test
@@ -46,7 +46,7 @@ public class PasswordTest extends BaseTest {
     @Test
     public void testHashedCredentialsMatcherWithMyRealm2() {
         //使用testGeneratePassword生成的散列密码
-        login("classpath:shiro-hashedCredentialsMatcher.ini", "liu", "123");
+        login("classpath:com/tidecc/shiro/chapter05/shiro-hashedCredentialsMatcher.ini", "liu", "123");
     }
 
     @Test
@@ -55,7 +55,7 @@ public class PasswordTest extends BaseTest {
         BeanUtilsBean.getInstance().getConvertUtils().register(new EnumConverter(), JdbcRealm.SaltStyle.class);
 
         //使用testGeneratePassword生成的散列密码
-        login("classpath:shiro-jdbc-hashedCredentialsMatcher.ini", "liu", "123");
+        login("classpath:com/tidecc/shiro/chapter05/shiro-jdbc-hashedCredentialsMatcher.ini", "liu", "123");
     }
 
 
@@ -80,9 +80,9 @@ public class PasswordTest extends BaseTest {
     public void testRetryLimitHashedCredentialsMatcherWithMyRealm() {
         for(int i = 1; i <= 5; i++) {
             try {
-                login("classpath:shiro-retryLimitHashedCredentialsMatcher.ini", "liu", "234");
+                login("classpath:com/tidecc/shiro/chapter05/shiro-retryLimitHashedCredentialsMatcher.ini", "liu", "234");
             } catch (Exception e) {/*ignore*/}
         }
-        login("classpath:shiro-retryLimitHashedCredentialsMatcher.ini", "liu", "234");
+        login("classpath:com/tidecc/shiro/chapter05/shiro-retryLimitHashedCredentialsMatcher.ini", "liu", "234");
     }
 }
