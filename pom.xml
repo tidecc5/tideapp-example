@@ -263,6 +263,11 @@
     	<artifactId>druid</artifactId>
     	<version>0.2.26</version>
     </dependency>
+    <dependency>
+    	<groupId>net.sf.ehcache</groupId>
+    	<artifactId>ehcache-core</artifactId>
+    	<version>2.6.9</version>
+    </dependency>
   </dependencies>
 
 
